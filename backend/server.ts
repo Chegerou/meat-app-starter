@@ -8,7 +8,7 @@ import { handleAuthentication } from './auth';
 import { handleAuthorization } from './authz';
 
 const server: Express = jsonServer.create()
-const router = jsonServer.router('db.json')
+const router = jsonServer.router('../../db.json')
 const middlewares = jsonServer.defaults()
 
 // Set default middlewares (logger, static, cors and no-cache)
