@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MEAT_API } from "app/app.api";
 import { Order } from "./order.model";
-import { LoginService } from "app/security/login/login.service";
 
 
 @Injectable()
