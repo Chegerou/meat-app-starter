@@ -5,6 +5,7 @@ import { CartItem } from 'app/restaurant-details/shopping-cart/carts-item.module
 import { RadioOption } from 'app/shared/radio/radio-option.module';
 import { Order, OrderItem } from './order.model';
 import { OrderService } from './order.service';
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'mt-order',
@@ -17,6 +18,7 @@ export class OrderComponent implements OnInit {
   delivery: number = 8;
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i ;
   numberPattern = /^[0-9]*$/;
+  orderId: string;
 
   paymentOptions: RadioOption[] = [
     { label: 'Dinheiro', value: 'MON' },
@@ -83,6 +85,9 @@ export class OrderComponent implements OnInit {
     .map((item:CartItem) => new OrderItem(item.quantity, item.menuItem.id))
 
     this.orderService.checkOrder(order)
+    .do((orderId: string) => {
+      this.orderId = orderId;
+    } )
     .subscribe((orderId: string) => {
       this.router.navigate(['/order-summary']);
       console.log(`Compra concluída: ${orderId}`);
@@ -90,6 +95,9 @@ export class OrderComponent implements OnInit {
     });
   }
 
+  isOrderCompleted(): boolean{
+    return this.orderId !== undefined;
+  }
 
 
 
