@@ -16,7 +16,10 @@
     "types": [],
     "typeRoots": [
       "../node_modules/@types"
-    ]
+    ],
+  },
+  "angularCompilerOptions": {
+    "preserWhitespaces": false
   },
   "exclude": [
     "test.ts",
