@@ -1,8 +1,8 @@
 # Meat - Angular App Starter
 ```
 Este repositorio ele é baseado no curso de "Construindo Aplicações Web com o novo Angular (4,5,6)". 
-Utilizando o link " https://github.com/cod3rcursos/meat-app-starter.git " 
-você consegue ter acesso ao repositorio original onde você pode clonar e começar a desenvolver o curso também.
+Utilizando o link " https://github.com/cod3rcursos/meat-app-starter.git " você consegue ter 
+acesso ao repositorio original onde você pode clonar e começar a desenvolver o curso também.
 
 Realizei o desenvolvimento desta aplicação junto ao curso.
 
